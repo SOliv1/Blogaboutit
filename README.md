@@ -79,5 +79,4 @@ os.environ.setdefault(),
 now we should be able to deploy:
 `python3 manage.py makemigrations`
 
-
 [![Build Status](https://travis-ci.com/SOliv1/Blogaboutit.svg?branch=master)](https://travis-ci.com/SOliv1/Blogaboutit)

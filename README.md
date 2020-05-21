@@ -20,6 +20,33 @@
 ignore all unwanted files below with following command:
 `echo -e "*.db.sqlite3\n*.pyc\n_pycache_/" > .gitignore`
 
+#travis
+https://travis-ci.org
+
+1.  click sign-in with GitHub
+1.  signed in, 
+1.  click on your name and the accounts menu.
+1. scroll down the list of available repositories and hit the toggle switch there on our Django blog repository.
+1.  So this is going to synchronize it with Travis.
+1.   click on the repository name again because what we actually want to do now is to grab some markup here.
+1.   no builds for the repository yet.
+1.  click on where it says build unknown, then choose markdown from the drop-down menu, and copy the code that appears.
+1.  add in our README.md file, and this is going to allow us to continually keep track of whether our project is passing the tests or not.
+1.  paste it in at the bottom of our README.md file.
+1.  save.
+1.  create a new file to integrate with Travis.
+1.   .travis.yml
+1.   put some markup in here as well.
+1.   language is Python.
+1.   version that we're using is Python ?
+1.   install command is `pip3 install -r requirements.txt`.
+1.   And then we have the script to run it.
+1.   We pass a SECRET_KEY here.
+1.  We don't actually need to put our secret key in because we're passing a dummy one.
+    This is for when we hide our secret key on Heroku.
+
+`python --version` or `python -V` press enter
+
 `python3 manage.py startapp posts`
 
 `pip3 install pillow`   for images
@@ -28,7 +55,13 @@ ignore all unwanted files below with following command:
 
 `python3 manage.py makemigrations`
 
-`django-forms-bootstrap` 
+`python3 manage.py migrate`
+
+#create views
+
+1.  Open up views.py in posts directory
+
+`pip3 install django-forms-bootstrap` 
 and add this to installed apps in settings.py as django_forms_bootstrap underscores.
 
 `python3 manage.py createsuperuser`

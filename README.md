@@ -78,6 +78,8 @@ admain@project.com
 Blogsgalore
 
 ## Heroku
+
+*secret key ''*
 *Procfile*
 *requirements.txt*
 
@@ -112,4 +114,18 @@ os.environ.setdefault(),
 now we should be able to deploy:
 `python3 manage.py makemigrations`
 
+Deploy locally python3 manage.py runserver - when successfully deployed locally 
+install a new libruary called *whitenoise* - allows us to host our static files, such as CSS and JavaScript, correctly on Heroku.
+
+`pip3 install whitenoise`
+`pip3 freeze > requirements.txt`
+`pip3 install gunicorn`
+`pip3 freeze > requirements.txt`
+
+We could, actually, get away without installing these and just add them at the end of our requirements.txt file, but let's install them anyway.
+
+
+
 [![Build Status](https://travis-ci.com/SOliv1/Blogaboutit.svg?branch=master)](https://travis-ci.com/SOliv1/Blogaboutit)
+
+

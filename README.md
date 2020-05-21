@@ -1,39 +1,82 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Django Blog Mini Project
 
-Welcome USER_NAME,
+## A simple blog app usig Django
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+`pip3 install django==1.11.29`
 
-## Gitpod Reminders
+`pip freeze > requirements.txt`
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+`django-admin startproject blog .`
 
-`python3 -m http.server`
+`pip3 install django`
 
-A blue button should appear to click: *Make Public*,
+`python3 manage.py migrate`
 
-Another blue button should appear to click: *Open Browser*.
+`python3 manage.py runserver`
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+`git init`
 
-A blue button should appear to click: *Make Public*,
+`.gitignore`
+ignore all unwanted files below with following command:
+`echo -e "*.db.sqlite3\n*.pyc\n_pycache_/" > .gitignore`
 
-Another blue button should appear to click: *Open Browser*.
+`python3 manage.py startapp posts`
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+`pip3 install pillow`   for images
 
-## Updates Since The Instructional Video
+`pip3 freeze > requirements.txt`
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+`python3 manage.py makemigrations`
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+`django-forms-bootstrap` 
+and add this to installed apps in settings.py as django_forms_bootstrap underscores.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+`python3 manage.py createsuperuser`
+## csrf_token
+So let's return to our CSRF token.
+This is a protection mechanism provided by Django to make sure that your website isn't vulnerable to cross-site request forgery attacks.
+Now, you can read more about that on the Internet if you want.
+Bootstrap takes care of this under the bonnet, so we don't have to.
+But it's a very good practice to remember to include csrf_token in every form that we create.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+login to admin
+admin
+admain@project.com
+Blogsgalore
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Heroku
+*Procfile*
+*requirements.txt*
 
---------
+Heroku login
+Dashboard go to create new app
+settings page
+fill in the environmental vairables
+go to rescources and type in searchbox for **Heroku Postgres*
+click on create new database - hobbydevelopment freeze
+add secret key from env.py to environment variables in config variables
+add the localhost 
 
-Happy coding!
+
+`pip3 install dj-database-url psycopg2`  : connects our database to our urls
+
+`pip3 freeze > requirements.txt` again to update requirements.txt
+
+
+Comment out default database and create a new database dictionary not a string:
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
+
+and then scroll to the top of setting.py to import it.
+import dj_database_url
+
+Collect the database url from postgres on heroku vars and add for local testing purposes only they will not go live.
+and paste in the env.py file.
+os.environ.setdefault(),
+
+now we should be able to deploy:
+`python3 manage.py makemigrations`
+
+

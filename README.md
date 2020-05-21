@@ -125,7 +125,6 @@ install a new libruary called *whitenoise* - allows us to host our static files,
 We could, actually, get away without installing these and just add them at the end of our requirements.txt file, but let's install them anyway.
 
 
-
 [![Build Status](https://travis-ci.com/SOliv1/Blogaboutit.svg?branch=master)](https://travis-ci.com/SOliv1/Blogaboutit)
 
 

@@ -19,9 +19,11 @@
 `.gitignore`
 ignore all unwanted files below with following command:
 `echo -e "*.db.sqlite3\n*.pyc\n_pycache_/" > .gitignore`
+## View the project website [here](https://atest-blog.herokuapp.com/posts/)
+# Travis Build
+[![Build Status](https://travis-ci.com/SOliv1/Blogaboutit.svg?branch=master)](https://travis-ci.com/SOliv1/Blogaboutit)
 
-#travis
-https://travis-ci.org
+[Travis.org](https://travis-ci.org)
 
 1.  click sign-in with GitHub
 1.  signed in, 
@@ -125,6 +127,5 @@ install a new libruary called *whitenoise* - allows us to host our static files,
 We could, actually, get away without installing these and just add them at the end of our requirements.txt file, but let's install them anyway.
 
 
-[![Build Status](https://travis-ci.com/SOliv1/Blogaboutit.svg?branch=master)](https://travis-ci.com/SOliv1/Blogaboutit)
 
 
